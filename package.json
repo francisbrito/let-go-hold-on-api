@@ -1,0 +1,35 @@
+{
+  "name": "let-go-hold-on-api",
+  "version": "0.0.1",
+  "description": "API for **Let Go/Hold On** self-motivation service.",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "keywords": [
+    "api",
+    "let",
+    "go",
+    "hold",
+    "on",
+    "motivation",
+    "service"
+  ],
+  "author": "Francis Brito <fr.br94@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^5.8.25",
+    "babel-eslint": "^4.1.3",
+    "babel-runtime": "^5.8.25",
+    "blue-tape": "^0.1.10",
+    "eslint-config-airbnb": "0.0.8",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.2.1",
+    "gulp-eslint": "^1.0.0",
+    "gulp-tape": "0.0.3",
+    "tap-spec": "^4.1.0"
+  },
+  "dependencies": {
+    "co": "^4.6.0"
+  }
+}
