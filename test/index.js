@@ -5,7 +5,7 @@ import agent from 'promisify-supertest';
 import createApplication from '../src';
 
 const setup = () => {
-  return agent(createApplication());
+  return agent(createApplication().callback());
 };
 
 test('GET /', (sub) => {
