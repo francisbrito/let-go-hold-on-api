@@ -53,7 +53,7 @@ test('GET /', (sub) => {
     function bodyToHaveKeys(...keys) {
       return function bodyToHaveKeysAssertion({body}) {
         keys.forEach((key) => {
-          assert.ok(key in body, `should have key ${key}`);
+          assert.ok(key in body, `should have key '${key}'`);
         });
       };
     }
