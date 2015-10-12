@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "gulp test",
-    "start": "node .tmp/src/index.js"
+    "start": "node .tmp/src/bin/serve"
   },
   "keywords": [
     "api",
