@@ -33,9 +33,8 @@ gulp.task('dist', ['test'], () => {
 });
 
 gulp.task('test', ['compile'], shell.task([
-  `tape "${COMPILED_TEST_FILES}" | faucet`,
+  `blue-tape "${COMPILED_TEST_FILES}" | faucet`,
 ]));
-
 
 gulp.task('compile', ['lint'], () => {
   return gulp.src([
