@@ -1,3 +1,5 @@
+/* eslint-disable func-names, no-use-before-define */
+
 import co from 'co';
 import test from 'blue-tape';
 import agent from 'promisify-supertest';
@@ -14,9 +16,13 @@ test('GET /', (sub) => {
 
     yield app
     .get('/')
-    .expect((response) => {
-      assert.equal(response.statusCode, 200, 'status code should be 200');
-    })
+    .expect(statusCodeToBeOk)
     .end();
+
+    function statusCodeToBeOk({statusCode}) {
+      const okStatusCode = 200;
+
+      assert.equal(statusCode, okStatusCode, 'should be status OK');
+    }
   }));
 });
