@@ -2,14 +2,14 @@ FROM iojs:2.5.0
 
 MAINTAINER Francis Brito <fr.br94@gmail.com>
 
-RUN mkdir /var/app
+EXPOSE 3000
 
-ADD package.json /var/app/package.json
+RUN mkdir /var/app
 
 WORKDIR /var/app
 
-RUN npm install
-
 ADD . /var/app
+
+RUN npm install
 
 CMD npm start
