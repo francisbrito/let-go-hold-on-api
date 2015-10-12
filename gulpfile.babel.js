@@ -7,10 +7,9 @@ import path from 'path';
  * External imports
  */
 import gulp from 'gulp';
-import tape from 'gulp-tape';
 import babel from 'gulp-babel';
+import shell from 'gulp-shell';
 import eslint from 'gulp-eslint';
-import specReporter from 'tap-spec';
 
 const LIB_DIR = path.join(__dirname, 'lib');
 
@@ -33,10 +32,9 @@ gulp.task('dist', ['test'], () => {
   .pipe(gulp.dest(LIB_DIR));
 });
 
-gulp.task('test', ['compile'], () => {
-  return gulp.src(COMPILED_TEST_FILES)
-  .pipe(tape({reporter: specReporter()}));
-});
+gulp.task('test', ['compile'], shell.task([
+  `tape "${COMPILED_TEST_FILES}" | faucet`,
+]));
 
 
 gulp.task('compile', ['lint'], () => {
